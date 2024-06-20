@@ -91,9 +91,4 @@
     echo var_dump($num1);
     echo "is ";
     echo var_dump(!$num1);
-
-
-
-
-
 ?>

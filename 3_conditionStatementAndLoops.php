@@ -88,7 +88,7 @@
     $myList = array("Ram","Motherboard","Keyboard","Processor","Mouse","HardDisk");
     echo "<h3>Print using ForEach Loop</h3>";
 
-    foreach ($myList as $list) {
+    foreach ($myList as $list){
         echo $list;
         echo "<br>";
     }

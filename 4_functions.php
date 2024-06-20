@@ -10,5 +10,4 @@
 
     $number = 5;
     tableGenerate($number);
-
 ?>

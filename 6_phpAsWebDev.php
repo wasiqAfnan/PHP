@@ -14,13 +14,13 @@
         <a class="nav-link active" aria-current="page" href="/php/6_phpAsWebDev.php">HOME</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">BILLO</a>
+        <a class="nav-link" href="#">About</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">AFFA</a>
+        <a class="nav-link" href="#">Contact</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled">BAPUJI</a>
+        <a class="nav-link disabled">Services</a>
     </li>
     </ul>
 

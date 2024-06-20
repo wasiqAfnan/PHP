@@ -31,7 +31,4 @@
     // str_replace(oldString,newString,varName where chane will occur)
     echo str_replace("Afnan","Harry",$str);
     echo "<br>";
-
-
-
 ?>
