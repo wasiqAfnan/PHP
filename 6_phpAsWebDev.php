@@ -30,7 +30,7 @@
             $email = $_POST['email'];
             $pass = $_POST['pass'];
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Billo is a chutiya!</strong> Send to database successful email = '. $email.'
+                <strong>Wooh!</strong> Send to database successful email = '. $email.'
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
         }
