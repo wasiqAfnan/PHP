@@ -2,14 +2,13 @@
     $serverName = "localhost";
     $userName = "root";
     $password = "";
-    $dbName = "db2";
+    $dbName = "mydb";
 
-    $conn = mysqli_connect($serverName,$userName,$password,$dbName);
+    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
 
-    if(!$conn){
-        die("Failed to connect to server". mysqli_error($conn));
-    }
-    else{
+    if (!$conn) {
+        die("Failed to connect to server" . mysqli_connect_error());
+    } else {
         echo "Server connection successful";
     }
 ?>
@@ -25,42 +24,25 @@
     <br><br>
     <?php  
         $query = "SELECT * FROM `mytable`;";
-        $i=1;
-        $test = mysqli_query($conn,$query) or die("Failed");
+        $i = 1;
+        $test = mysqli_query($conn, $query) or exit("Failed");
     ?>
     <table>
         <tr>
-            <th>Sl.no<th>
-            <th>Name<th>
-            <th>Phone<th>
+            <th>Sl.no</th>
+            <th>Name</th>
+            <th>Phone</th>
         </tr>
 
+        <?php while ($row = mysqli_fetch_array($test)) { ?>
         <tr>
-            <td><?php $row = mysqli_fetch_assoc($test);
-                    echo $i++;?><td>
-            <td><?php echo $row['name'];?><td>
-            <td><?php echo $row['phone'];?><td>
+            <td><?php echo $i++; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['phone']; ?></td>
         </tr>
+        <?php } ?>
+    </table>
 
-        <tr>
-            <td><?php $row = mysqli_fetch_assoc($test);
-                    echo $i++;?><td>
-            <td><?php echo $row['name'];?><td>
-            <td><?php echo $row['phone'];?><td>
-        </tr>
-
-        <tr>
-            <td><?php $row = mysqli_fetch_assoc($test);
-                    echo $i++;?><td>
-            <td><?php echo $row['name'];?><td>
-            <td><?php echo $row['phone'];?><td>
-        </tr>
-
-        <tr>
-            <td><?php $row = mysqli_fetch_assoc($test);
-                    echo $i++;?><td>
-            <td><?php echo $row['name'];?><td>
-            <td><?php echo $row['phone'];?><td>
-        </tr>
+    <?php if ($i === 1) { echo "<p>No records found.</p>"; } ?>
 </body>
 </html>
