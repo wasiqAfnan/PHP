@@ -40,14 +40,14 @@
     
     // selecting databse
     
-    mysqli_select_db($conn,"db2") or die ("Failed to connect");
+    mysqli_select_db($conn,"mydb") or die ("Failed to connect");
 
-    $query = "CREATE TABLE `mytable` (`sno` INT NOT NULL AUTO_INCREMENT,`phone` INT NOT NULL , PRIMARY KEY (sno)); ";
+    $query = "CREATE TABLE `mytable` (`sno` INT AUTO_INCREMENT,`phone` INT NOT NULL , `name`VARCHAR(30) NOT NULL,PRIMARY KEY (sno)); ";
 
     $test = mysqli_query($conn,$query);
 
     if($test){
-        echo "creation of table is succesful";
+        echo "creation of table is succesful".$test;
     }
     else{
         echo "Failed to create table" . mysqli_error($conn);

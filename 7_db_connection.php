@@ -18,7 +18,7 @@
     if(!$conn){
         die("Db connection failed");
     }
-    echo "Connection Establish succesfully with database '$dbName'";
+    echo "Connection Establish succesfully with database '$dbName' using normal approach\n";
 
     mysqli_close($conn);// closing connection
 
@@ -31,7 +31,7 @@
     if($conn -> error ){
         die("Db connection failed".mysqli_connect_error());
     }
-    echo "Connection Establish succesfully with database '$dbName' ";
+    echo "Connection Establish succesfully with database '$dbName'  using object oriented approach";
 
     $conn -> close(); // closing connection
 ?>
