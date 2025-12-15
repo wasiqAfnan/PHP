@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AJAX + PHP + MySQL Example</h2>
+
+<input type="text" id="name" placeholder="Enter name">
+<input type="text" id="email" placeholder="Enter email">
+
+<button onclick="saveUser()">Save User</button>
+<button onclick="loadUsers()">Load Users</button>
+
+<pre id="output"></pre>
+
+<script>
+function saveUserFetch() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    fetch("insert.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`
+    })
+    .then(res => res.text())
+    .then(data => alert(data));
+}
+
+
+function loadUsersFetch() {
+    fetch("fetch.php")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("output").textContent =
+                JSON.stringify(data, null, 2);
+        });
+}
+</script>
+
+</body>
+</html>
