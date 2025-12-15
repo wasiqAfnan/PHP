@@ -22,6 +22,10 @@
     printArray($arr);   // Calling printArray() function
     printArray($name);  // Calling printArray() function
 
+    foreach($arr as $value){
+        echo $value;
+    }
+
     echo "<hr>";
 
     /* Associative Array */
